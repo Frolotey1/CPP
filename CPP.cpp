@@ -1,8 +1,5 @@
 ﻿#include <iostream>
 
-#include <iostream>
-#include <algorithm>
-
 using string = std::string;
 
 // Задание 1 
