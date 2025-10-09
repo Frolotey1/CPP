@@ -830,6 +830,7 @@ static void select_necessary_category(double count_rubles) {
         sum_discounts += every_discount;
     }
     std::cout << "Было всего потрачено с учетом скидок (если они были): " << sum_discounts << " рублей" << std::endl;
+    exit(0);
 }
 
 int main() {
