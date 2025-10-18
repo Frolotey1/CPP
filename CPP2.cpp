@@ -3,20 +3,27 @@
 
 using string = std::string;
 
-void first_task(int first_date[], int second_date[]) {
-    std::cout << "Первое задание\n";
-    int leap_or_not[2]{365,366};
-    int is_leap_year_or_not = 0;
-    if(first_date[2] % 400 == 0  first_date[2] % 4 == 0) {
-        is_leap_year_or_not = leap_or_not[1];
-    } else if(second_date[2] % 400 == 0  second_date[2] % 4 == 0) {
-        is_leap_year_or_not = leap_or_not[1];
+bool is_leap(int year) { 
+	if(year % 400 == 0 && year % 4 == 0) {
+        return 1;
     } else {
-        is_leap_year_or_not = leap_or_not[0];
+		return 0;
+	}
+}
+
+void first_task(int day1, int month1, int year1, int day2, int month2,int year2) {
+    std::cout << "Первое задание\n";
+    int is_leap_year_or_not = 0;
+    if(is_leap(year1)) {
+        is_leap_year_or_not = 366;
+    } else if(is_leap(year2)) {
+        is_leap_year_or_not = 366;
+    } else {
+        is_leap_year_or_not = 365;
     }
-    int days_difference = ((std::abs(first_date[0] - second_date[0])) + 
-    (std::abs(first_date[1] - second_date[1]) * 30) + 
-    (std::abs(first_date[2] - second_date[2]) * is_leap_year_or_not));
+    int days_difference = ((std::abs(day1 - day2) + 
+    (std::abs(month1 - month2) * 30) + 
+    (std::abs(year1 - year2) * is_leap_year_or_not)));
     std::cout << "Разница двух дат в днях: " << days_difference << std::endl;
 }
 
@@ -57,8 +64,7 @@ void third_task(int massive[], int size) {
 int main() {
     setlocale(LC_ALL,"Rus");
     srand(time(NULL));
-    int first_date[3]{1,11,2015},second_date[3]{1,11,2025};
-    first_task(first_date,second_date);
+    first_task(1,11,2024,1,11,2025);
     int massive_for_second_task[10];
     for(auto i = 0; i < 10; ++i) {
         massive_for_second_task[i] = rand() % 10;
