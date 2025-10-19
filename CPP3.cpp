@@ -30,8 +30,8 @@ static void empty_places(int** get_train) {
 		std::cerr << "Такого места в вагоне нет. Попробуйте ещё раз\n";
 		empty_places(get_train);
 	}
-	if(get_train[carriage_for_empty][empty_place] == 0) {
-		std::cerr << "Это место не забронировано. Выберите другое\n";
+	if(get_train[carriage_for_empty][empty_place] == 1) {
+		std::cerr << "Это место забронировано. Выберите другое\n";
 		empty_places(get_train);
 	} else {
 		get_train[carriage_for_empty][empty_place] = 0;
