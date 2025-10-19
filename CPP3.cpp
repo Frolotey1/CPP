@@ -3,7 +3,7 @@
 using string = std::string;
 
 
-static int** train() {
+int** train() {
 	int** carriages_and_places = new int*[18]; 
 	for(auto i = 0; i < 18; ++i) {
 		carriages_and_places[i] = new int[36];
@@ -16,7 +16,7 @@ static int** train() {
 	return carriages_and_places;
 }
 
-static void empty_places(int** get_train) {
+void empty_places(int** get_train) {
 	int carriage_for_empty = 0, empty_place = 0, continue_session = 0,count_ones = 0, count_zeros = 0;
 	std::cout << "Выберите вагон, в котором хотите забронировать то или иное место:\n";
 	std::cin >> carriage_for_empty;
@@ -90,7 +90,7 @@ void count_selected_and_empty_places(int** get_train) {
 	exit(0);
 }
 
-static void select_place_in_carriage_of_train(int** train) {
+void select_place_in_carriage_of_train(int** train) {
 	int carriage = 0, place = 0, empty_booked_places = 0, continue_session = 0;
 	std::cout << "\n";
 	int** get_train = train;
